@@ -1,0 +1,25 @@
+﻿@model WebSiteASP.Models.Person
+@{
+    ViewBag.Title = Model.Surname+" "+Model.Name+" "+Model.MiddleName;
+}
+
+
+<div class="linkDiv">
+    <a href="@Url.Action("Index", "Home")">Главная ></a>
+    <a href="@Url.Action("Team", "Home")"> Команда ></a>
+    <a href="#"> @Model.Surname @Model.Name @Model.MiddleName</a>
+</div>
+<div class="personDiv">
+    <div class="photoDiv">
+        <img src="@Url.Content(Model.PhotoName)"/>
+    </div>
+    <div class="infoDiv">
+        <h2>@Html.DisplayFor(modelItem => Model.Surname) @Html.DisplayFor(modelItem => Model.Name) @Html.DisplayFor(modelItem => Model.MiddleName)</h2>
+        <div class="posDiv">
+            @Html.DisplayFor(modelItem => Model.Job)
+        </div>
+        <div class="textDiv">
+            @Html.DisplayFor(modelItem => Model.Description)
+        </div>
+    </div>
+</div>

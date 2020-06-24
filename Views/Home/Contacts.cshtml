@@ -1,0 +1,44 @@
+﻿@{
+    ViewBag.Title = "Контактная информация";
+}
+
+<div class="linkDiv">
+    <a href="@Url.Action("Index", "Home")">Главная ></a>
+    <a href="#"> Контакты</a>
+</div>
+
+<div class="allContactsDiv">
+    <div class="textInfoDiv">
+        <h2 class="titles">Номер телефона:</h2>
+        <h2 class="info">53-00-95</h2>
+        <h2 class="titles">Адрес эл. почты:</h2>
+        <h2 class="info">rubisdv@mail.ru</h2>
+        <h2 class="titles">Часы работы:</h2>
+        <h2 class="info">ПН-ПТ с 9:00 до 19:00</h2>
+        <a href="@Url.Action("Request", "Home")">
+            <button>
+                <div>
+                    Запись на бесплатную
+                </div>
+                <div>
+                    консультацию
+                </div>
+            </button>
+        </a>
+    </div>
+    <div class="officePhotosDiv">
+        <div class="officePhotoDiv">
+            Фото офиса
+        </div>
+        <div class="officePhotoDiv">
+            Фото офиса
+        </div>
+        <div class="officePhotoDiv">
+            Фото офиса
+        </div>
+    </div>
+    <div class="addrAndMapDiv">
+        <h2>г. Владимир, ул. Мира, дом 22</h2>
+        <div id="map"></div>
+    </div>
+</div>

@@ -1,0 +1,92 @@
+﻿@{
+    ViewBag.Title = "Главная";
+}
+
+<div class="sloganDiv">
+    Картинка со слоганом
+</div>
+
+    
+<div class="tab">
+    <button class="tablinks active" onclick="openCity(event, 'ЮРИДИЧЕСКИМ_ЛИЦАМ')">ЮРИДИЧЕСКИМ ЛИЦАМ</button>
+    <button class="tablinks" onclick="openCity(event, 'ФИЗИЧЕСКИМ_ЛИЦАМ')">ФИЗИЧЕСКИМ ЛИЦАМ</button>
+    <button class="tablinks" onclick="openCity(event, 'ВЗЫСКАНИЕ_ДОЛГОВ')">ВЗЫСКАНИЕ ДОЛГОВ</button>
+</div>
+
+<div id="ЮРИДИЧЕСКИМ_ЛИЦАМ" class="tabcontent" style="display:block;">
+    <div class="servicesDiv">
+        <div class="serviceDiv">
+            <a href="@Url.Action("Service", "Home",new {id = 1})"> <img src="~/images/icon_services.png" alt="Заключение сделок" /> </a>
+            <a href="@Url.Action("Service", "Home",new {id = 1})">Заключение<br />сделок</a>
+        </div>
+        <div class="serviceDiv">
+            <a href="#"> <img src="~/images/icon_services.png" alt="услуга1" /> </a>
+            <a href="#">Название<br />услуги</a>
+        </div>
+        <div class="serviceDiv">
+            <a href="#"> <img src="~/images/icon_services.png" alt="услуга1" /> </a>
+            <a href="#">Название<br />услуги</a>
+        </div>
+        <div class="serviceDiv">
+            <a href="#"> <img src="~/images/icon_services.png" alt="услуга1" /> </a>
+            <a href="#">Название<br />услуги</a>
+        </div>
+        <div class="serviceDiv">
+            <a href="#"> <img src="~/images/icon_services.png" alt="услуга1" /> </a>
+            <a href="#">Название<br />услуги</a>
+        </div>
+        <div class="serviceDiv">
+            <a href="#"> <img src="~/images/icon_services.png" alt="услуга1" /> </a>
+            <a href="#">Название<br />услуги</a>
+        </div>
+        <div class="serviceDiv">
+            <a href="#"> <img src="~/images/icon_services.png" alt="услуга1" /> </a>
+            <a href="#">Название<br />услуги</a>
+        </div>
+        <div class="serviceDiv">
+            <a href="#"> <img src="~/images/icon_services.png" alt="услуга1" /> </a>
+            <a href="#">Название<br />услуги</a>
+        </div>
+    </div>
+</div>
+
+<div id="ФИЗИЧЕСКИМ_ЛИЦАМ" class="tabcontent">
+    <div class="servicesDiv">
+        <div class="serviceDiv">
+            <a href="#"> <img src="~/images/icon_services.png" alt="услуга1" /> </a>
+            <a href="#">Название<br />услуги</a>
+        </div>
+        <div class="serviceDiv">
+            <a href="#"> <img src="~/images/icon_services.png" alt="услуга1" /> </a>
+            <a href="#">Название<br />услуги</a>
+        </div>
+        <div class="serviceDiv">
+            <a href="#"> <img src="~/images/icon_services.png" alt="услуга1" /> </a>
+            <a href="#">Название<br />услуги</a>
+        </div>
+        <div class="serviceDiv">
+            <a href="#"> <img src="~/images/icon_services.png" alt="услуга1" /> </a>
+            <a href="#">Название<br />услуги</a>
+        </div>
+        <div class="serviceDiv">
+            <a href="#"> <img src="~/images/icon_services.png" alt="услуга1" /> </a>
+            <a href="#">Название<br />услуги</a>
+        </div>
+        <div class="serviceDiv">
+            <a href="#"> <img src="~/images/icon_services.png" alt="услуга1" /> </a>
+            <a href="#">Название<br />услуги</a>
+        </div>
+        <div class="serviceDiv">
+            <a href="#"> <img src="~/images/icon_services.png" alt="услуга1" /> </a>
+            <a href="#">Название<br />услуги</a>
+        </div>
+        <div class="serviceDiv">
+            <a href="#"> <img src="~/images/icon_services.png" alt="услуга1" /> </a>
+            <a href="#">Название<br />услуги</a>
+        </div>
+    </div>
+</div>
+
+<div id="ВЗЫСКАНИЕ_ДОЛГОВ" class="tabcontent">
+    <h3>ВЗЫСКАНИЕ ДОЛГОВ</h3>
+</div>
