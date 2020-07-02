@@ -11,13 +11,66 @@
     <link rel="stylesheet" type="text/css" href="~/Content/requestStatus.css" />
     <link rel="stylesheet" type="text/css" href="~/Content/service.css" />
     <script src="~/Scripts/jsFuncs.js" type="text/javascript"></script>
+    
+    <script type="text/javascript">
+        function MenuOpenFunc() {
+            if(document.getElementById("myDropdown").classList.contains('show')) 
+            {
+                document.getElementById("myDropdown").className.replace(" show","");
+            }
+            else
+            {
+                document.getElementById("myDropdown").className += " show";
+            }
+        }
+        window.onclick = function(event) {
+            if (!event.target.matches('.dropbtn') && !event.target.matches('.dropbtnImg')) {
+                var dropdowns = document.getElementsByClassName("dropdown-content");
+                var i;
+                for (i = 0; i < dropdowns.length; i++) {
+                    var openDropdown = dropdowns[i];
+                    if (openDropdown.classList.contains('show')) {
+                     openDropdown.classList.remove('show');
+                    }
+                }
+            }
+        }
+    </script>
 
 </head>
 <body>
     <div id="header">
         <div class="logoDiv">
-            <a href="@Url.Action("Index", "Home")"> <img src="~/images/logo3_png.png" width="96" height="95" alt="ООО ВРЮЦ Владимир" /> </a>
+            <a href="@Url.Action("Index", "Home")"> <img src='~/images/logo3_png.png' alt="ООО ВРЮЦ Владимир" /> </a>
         </div>
+
+        <div class="mobileHeaderRequestDiv" id="headerMobile">
+            <div class="contactsIconDiv"><a href="@Url.Action("Request", "Home")"><img src="~/images/request.png" /></a></div>
+            <div class="contactsInfDiv"><a href="@Url.Action("Request", "Home")">Запись на консультацию</a></div>
+        </div>
+
+        <div class="mobileHeaderEmailDiv" id="headerMobile">
+            <div class="contactsIconDiv"> <img src="~/images/email1.png" /></div>
+            <div class="contactsInfDiv">rubisdv@mail.ru</div>
+        </div>
+
+        <div class="mobileHeaderPhoneDiv" id="headerMobile">
+            <div class="contactsIconDiv"> <img src="~/images/phone.png" /></div>
+            <div class="contactsInfDiv">53-00-95</div>
+        </div>
+
+        <div class="dropdown">
+
+            <button onclick="MenuOpenFunc()" class="dropbtn"><img onclick="MenuOpenFunc()" class="dropbtnImg" src='~/images/menu.png'/>  Меню</button>
+            <div id="myDropdown" class="dropdown-content">
+                <a href="@Url.Action("Index", "Home")">Главная</a>
+                <a href="@Url.Action("Services", "Home")">Услуги</a>
+                <a href="@Url.Action("Team", "Home")">Команда</a>
+                <a href="#">Нам доверяют</a>
+                <a href="@Url.Action("Contacts", "Home")">Контакты</a>
+            </div>
+        </div>
+
         <div class="frstHeaderMenuDiv">
             <div class="scndHeaderMenuDiv">
                 <div class="thrdHeaderMenuDiv">
@@ -25,23 +78,23 @@
                         <div class="headerMenuDiv">
                             <nav>
                                 <ul>
-                                    <li><a href="@Url.Action("Services", "Home")">Услуги </a></li>
+                                    <li><a href="@Url.Action("Services", "Home")">Услуги</a></li>
                                     <li><a href="@Url.Action("Team", "Home")">Команда</a></li>
                                     <li><a href="#">Нам доверяют</a></li>
                                     <li><a href="@Url.Action("Contacts", "Home")">Контакты</a></li>
                                 </ul>
+
                             </nav>
                             <div class="contactsDiv">
                                 <div class="contactsDivScnd">
-                                    <div class="contactsIconDiv"><img src="~/images/phone.png" /></div>
+                                    <div class="contactsIconDiv"> <img src="~/images/phone.png" /></div>
                                     <div class="contactsInfDiv">53-00-95</div>
                                 </div>
 
                                 <div class="contactsDivScnd">
-                                    <div class="contactsIconDiv"><a href="@Url.Action("Request", "Home")"><img src="~/images/request.png" /> </a></div>
+                                    <div class="contactsIconDiv"><a href="@Url.Action("Request", "Home")"><img src="~/images/request.png" /></a></div>
                                     <div class="contactsInfDiv"><a href="@Url.Action("Request", "Home")">Запись на консультацию</a></div>
                                 </div>
-
                             </div>
                         </div>
                     </div>

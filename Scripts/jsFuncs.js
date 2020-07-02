@@ -32,3 +32,27 @@ function init(){
 	myMap.geoObjects.add(myPlacemark);
 		
 }
+
+function MenuOpenFunc() {
+  if(document.getElementById("myDropdown").classList.contains('show')) 
+  {
+    document.getElementById("myDropdown").className.replace(" show","");
+  }
+  else
+  {
+    document.getElementById("myDropdown").className += " show";
+  }
+}
+  
+window.onclick = function(event) {
+    if (!event.target.matches('.dropbtn') && !event.target.matches('.dropbtnImg')) {
+      var dropdowns = document.getElementsByClassName("dropdown-content");
+      var i;
+      for (i = 0; i < dropdowns.length; i++) {
+        var openDropdown = dropdowns[i];
+        if (openDropdown.classList.contains('show')) {
+          openDropdown.classList.remove('show');
+        }
+      }
+    }
+}
