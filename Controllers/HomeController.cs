@@ -67,5 +67,12 @@ namespace WebSiteASP.Controllers
 
             return View(Service.Where(srvc => srvc.Id == id).Last());
         }
+
+        [HttpGet]
+        public ActionResult PropertySearch()
+        {
+            return View();
+        }
+
     }
 }
