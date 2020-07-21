@@ -8,7 +8,6 @@ namespace WebSiteASP.Models
 {
     public class VRLCContext : DbContext
     {
-        public DbSet<Person> Persons { get; set; }
         public DbSet<Service> Services { get; set; }
         public DbSet<User> Users { get; set; }
     }

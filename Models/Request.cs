@@ -16,22 +16,20 @@ namespace WebSiteASP.Models
 
         public bool SendRequest()
         {
-            // отправитель - устанавливаем адрес и отображаемое в письме имя
-            MailAddress from = new MailAddress("rubisiay@gmail.com", "Pavel");
-            // кому отправляем
-            MailAddress to = new MailAddress("edkun@yandex.ru");
-            // создаем объект сообщения
+            MailAddress from = new MailAddress("sender@gmail.com", "Pavel");
+
+            MailAddress to = new MailAddress("receiver@gmail.com");
+
             MailMessage m = new MailMessage(from, to);
-            // тема письма
+
             m.Subject = "Заявка на юр. консультацию";
-            // текст письма
+
             m.Body = $"Имя:{this.Name}\n\n Номер телефона:{this.Phone}\n\n Email:{this.Phone}\n\n\n Сообщение:\n{this.Msg}";
-            // письмо представляет код html
+
             m.IsBodyHtml = false;
-            // адрес smtp-сервера и порт, с которого будем отправлять письмо
+
             SmtpClient smtp = new SmtpClient("smtp.gmail.com", 587);
-            // логин и пароль
-            smtp.Credentials = new NetworkCredential("rubisiay@gmail.com", ",jhtwDjdfVjkjltw2011");
+            smtp.Credentials = new NetworkCredential("sender@gmail.com", "password");
             smtp.EnableSsl = true;
             try
             {

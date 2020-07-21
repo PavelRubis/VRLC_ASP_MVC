@@ -20,11 +20,6 @@ namespace WebSiteASP.Controllers
             return View();
         }
 
-        public ActionResult Team()
-        {
-            return View();
-        }
-
         public ActionResult Contacts()
         {
             return View();
@@ -54,13 +49,6 @@ namespace WebSiteASP.Controllers
             return View("~/Views/Home/RequestStatus.cshtml");
         }
 
-        public ActionResult Person(int id)
-        {
-            IEnumerable<Person> Persons = db.Persons;
-
-            return View(Persons.Where(prsn => prsn.Id == id).Last());
-        }
-
         public ActionResult Service(int id)
         {
             IEnumerable<Service> Service = db.Services;
@@ -74,5 +62,15 @@ namespace WebSiteASP.Controllers
             return View();
         }
 
+        [HttpPost]
+        public ActionResult PropertySearch(PropertySearchRequest propertySearch)
+        {
+            var variable = propertySearch;
+            return View();
+        }
+        public ActionResult UsTrust()
+        {
+            return View();
+        }
     }
 }

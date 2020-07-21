@@ -1,0 +1,86 @@
+﻿
+@{
+    ViewBag.Title = "Нам доверяют";
+}
+
+<div class="linkDiv">
+    <a href="@Url.Action("Index", "Home")">Главная ></a>
+    <a href="#"> Нам доверяют</a>
+</div>
+
+<div class="buttonChoiceDiv">
+    <div class="choiceButtonsDiv">
+        <button class="choiceButtonDiv" id="partnersButton"
+                onclick="SelectPartnersOrLicenses('partnersButton')">
+            Наши партнеры
+        </button>
+        <button class="choiceButtonDiv" id="licenseButton"
+                onclick="SelectPartnersOrLicenses('licenseButton')">
+            Лицензии и сертификаты
+        </button>
+    </div>
+</div>
+
+<div id="Modal" class="modal">
+
+    <span id="close" onclick="CloseSpan()">&times;</span>
+
+    <img class="modal-content" src='~/images/sberbankLogo.jpg' id="modalLicense1">
+    <img class="modal-content" src='~/images/vladprombankLogo.jpg' id="modalLicense2">
+
+    <div id="caption"></div>
+</div>
+
+<div class="licenseDiv" id="sliderDiv">
+    <div class="multiple-items-slider">
+        <div>
+            <img id="license1" src='~/images/sberbankLogo.jpg' onclick="ModalImgShow('license1','modalLicense1')" />
+        </div>
+        <div>
+            <img id="license2" src='~/images/vladprombankLogo.jpg' onclick="ModalImgShow('license2','modalLicense2')" />
+        </div>
+        <div><img src='~/images/sberbankLogo.jpg' /></div>
+        <div><img src='~/images/sberbankLogo.jpg' /></div>
+        <div><img src='~/images/sberbankLogo.jpg' /></div>
+        <div><img src='~/images/sberbankLogo.jpg' /></div>
+    </div>
+</div>
+
+<div class="partnersDiv" id="partnersDiv">
+    <div class="partnersTextDiv">
+        К настоящему времени услугами специалистов нашего адвокатского бюро воспользовались более 350 компаний.
+        Среди них как крупные промышленные и торговые компании, так и предприятия малого и среднего бизнеса. Более
+        500 граждан – как известные персоны, так и широкий круг частных лиц – доверили нам решение своих личных
+        проблем. <br><br>
+        Максимальный диапазон услуг в области права, а также стремление эффективно решить вопрос каждого доверителя
+        открывают наши двери для всех, кто нуждается в квалифицированной правовой помощи.<br><br>
+        Мы гордимся успешно выполненными поручениями наших доверителей, среди которых:
+    </div>
+    <div class="partnersLogosDiv">
+        <img src='~/images/sberbankLogo.jpg' />
+        <img src='~/images/sberbankLogo.jpg' />
+        <img src='~/images/sberbankLogo.jpg' />
+        <img src='~/images/sberbankLogo.jpg' />
+        <img src='~/images/sberbankLogo.jpg' />
+        <img src='~/images/sberbankLogo.jpg' />
+        <img src='~/images/sberbankLogo.jpg' />
+        <img src='~/images/sberbankLogo.jpg' />
+        <img src='~/images/sberbankLogo.jpg' />
+        <img src='~/images/sberbankLogo.jpg' />
+        <img src='~/images/sberbankLogo.jpg' />
+        <img src='~/images/sberbankLogo.jpg' />
+        <img src='~/images/sberbankLogo.jpg' />
+        <img src='~/images/sberbankLogo.jpg' />
+        <img src='~/images/sberbankLogo.jpg' />
+        <img src='~/images/sberbankLogo.jpg' />
+        <img src='~/images/sberbankLogo.jpg' />
+        <img src='~/images/sberbankLogo.jpg' />
+        <img src='~/images/sberbankLogo.jpg' />
+        <img src='~/images/sberbankLogo.jpg' />
+        <img src='~/images/sberbankLogo.jpg' />
+        <img src='~/images/sberbankLogo.jpg' />
+        <img src='~/images/sberbankLogo.jpg' />
+        <img src='~/images/sberbankLogo.jpg' />
+    </div>
+</div>
+
