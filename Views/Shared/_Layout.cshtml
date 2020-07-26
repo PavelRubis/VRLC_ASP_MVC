@@ -6,15 +6,15 @@
     <title>@ViewBag.Title - ООО ВРЮЦ</title>
     <link rel="stylesheet" type="text/css" href="~/Content/general.css" />
     <link rel="stylesheet" type="text/css" href="~/Content/contacts.css" />
-    <link rel="stylesheet" type="text/css" href="~/Content/person.css" />
     <link rel="stylesheet" type="text/css" href="~/Content/request.css" />
-    <link rel="stylesheet" type="text/css" href="~/Content/team.css" />
     <link rel="stylesheet" type="text/css" href="~/Content/requestStatus.css" />
     <link rel="stylesheet" type="text/css" href="~/Content/service.css" />
     <link rel="stylesheet" type="text/css" href="~/Content/propertySearch.css" />
     <link rel="stylesheet" type="text/css" href="~/Scripts/slick/slick.css" />
     <link rel="stylesheet" type="text/css" href="~/Scripts/slick/slick-theme.css" />
     <link rel="stylesheet" type="text/css" href="~/Content/usTrust.css" />
+    <link rel="stylesheet" type="text/css" href="~/Content/videos.css" />
+    <link rel="stylesheet" type="text/css" href="~/Content/video.css" />
 
     <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
@@ -22,16 +22,17 @@
     <script type="text/javascript" src="~/Scripts/jsFuncs.js"></script>
 
     <script type="text/javascript">
-        function MenuOpenFunc() {
-            if (document.getElementById("myDropdown").classList.contains('show')) {
-                document.getElementById("myDropdown").className.replace(" show", "");
-            }
-            else {
-                document.getElementById("myDropdown").className += " show";
+
+        function dropList(dropDownID) {
+            if (document.getElementById(dropDownID).classList.contains('show')) {
+                document.getElementById(dropDownID).classList.remove('show');
+            } else {
+                document.getElementById(dropDownID).classList.add('show');
             }
         }
+
         window.onclick = function (event) {
-            if (!event.target.matches('.dropbtn') && !event.target.matches('.dropbtnImg')) {
+            if (!event.target.matches('.dropElement')) {
                 var dropdowns = document.getElementsByClassName("dropdown-content");
                 var i;
                 for (i = 0; i < dropdowns.length; i++) {
@@ -60,7 +61,7 @@
         </div>
 
         <div class="mobileHeaderRequestDiv" id="headerMobile">
-            <div class="contactsIconDiv"> <img src="~/images/request.png" /></div>
+            <div class="contactsIconDiv"><a href="@Url.Action("Request", "Home")"><img src="~/images/request.png" /></a></div>
             <div class="contactsInfDiv"><a href="@Url.Action("Request", "Home")">Запись на консультацию</a></div>
         </div>
 
@@ -75,17 +76,17 @@
         </div>
 
         <div class="dropdown">
-            <button onclick="myFunction('header')" class="dropbtn">
-                <img onclick="myFunction('header')"
-                     class="dropbtnImg" src='~/images/menu.png' /> Меню
+            <button onclick="dropList('myDropdown')" class="dropbtn dropElement">
+                <img onclick="if (document.getElementById(dropDownID).className.match('show')) {document.getElementById(dropDownID).className.replace('show','');} else {document.getElementById(dropDownID).className += ' show';}" class="dropElement" src='~/images/menu.png' />
+                Меню
             </button>
             <div id="myDropdown" class="dropdown-content">
                 <a href="@Url.Action("Index", "Home")">Главная</a>
                 <a href="@Url.Action("Services", "Home")">Услуги</a>
                 <a href="@Url.Action("UsTrust", "Home")">Нам доверяют</a>
                 <a href="@Url.Action("Contacts", "Home")">Контакты</a>
+                <a href="@Url.Action("Videos", "Home")">Видео</a>
                 <a href="@Url.Action("PropertySearch", "Home")">Розыск имущества</a>
-                <a href="#">Видео</a>
                 <a href="#">Покупка долгов</a>
             </div>
         </div>
@@ -95,23 +96,16 @@
                 <div class="thrdHeaderMenuDiv">
                     <div class="frthHeaderMenuDiv">
                         <div class="headerMenuDiv">
-                            <nav>
+                            <div class="navDiv">
                                 <ul>
-                                    <li><a href="@Url.Action("Services", "Home")">Услуги</a></li>
+                                    <li><a href="@Url.Action("Services", "Home")">Услуги </a></li>
                                     <li><a href="@Url.Action("UsTrust", "Home")">Нам доверяют</a></li>
                                     <li><a href="@Url.Action("Contacts", "Home")">Контакты</a></li>
+                                    <li><a href="@Url.Action("Videos", "Home")">Видео</a></li>
                                     <li><a href="@Url.Action("PropertySearch", "Home")">Розыск имущества</a></li>
-                                    <li>
-                                        <div class="dropdown" id='dropdownExtra'>
-                                            <div class="drpDwnDiv" onclick="myFunction('extra')">ПРОЧЕЕ</div>
-                                            <div id="extraDropDown" class="dropdown-content">
-                                                <a href="#">ВИДЕО</a>
-                                                <a href="#">ПОКУПКА ДОЛГОВ</a>
-                                            </div>
-                                        </div>
-                                    </li>
+                                    <li><a href="#">Покупка долгов</a></li>
                                 </ul>
-                            </nav>
+                            </div>
                             <div class="contactsDiv">
                                 <div class="contactsDivScnd">
                                     <div class="contactsIconDiv"> <img src="~/images/phone.png" /></div>
@@ -135,29 +129,20 @@
     <div id="footer">
         <p class="copyrightP">© ООО "ВРЮЦ", 2020</p>
         <div class="footerMenuAddrDiv">
-            <div class="footerMenuDiv">
-                <ul class="navFooter">
-                    <li><a href="@Url.Action("Services", "Home")">Услуги</a></li>
-                    <li><a href="@Url.Action("UsTrust", "Home")">Нам доверяют</a></li>
-                    <li><a href="@Url.Action("Contacts", "Home")">Контакты</a></li>
-                    <li><a href="@Url.Action("PropertySearch", "Home")">Розыск имущества</a></li>
-                    <li>
-                        <div class="dropdown" id='dropdownExtraFooter'>
-                            <div class="drpDwnDiv" onclick="myFunction('extraFooter')">Прочее</div>
-                            <div id="extraDropDownFooter" class="dropdown-content">
-                                <a href="#">ВИДЕО</a>
-                                <a href="#">ПОКУПКА ДОЛГОВ</a>
-                            </div>
-                        </div>
-                    </li>
-                </ul>
-            </div>
+            <ul class="navDivFooter">
+                <li><a href="@Url.Action("Services", "Home")">Услуги </a></li>
+                <li><a href="@Url.Action("UsTrust", "Home")">Нам доверяют</a></li>
+                <li><a href="@Url.Action("Contacts", "Home")">Контакты</a></li>
+                <li><a href="@Url.Action("Videos", "Home")">Видео</a></li>
+                <li><a href="@Url.Action("PropertySearch", "Home")">Розыск имущества</a></li>
+                <li><a href="#">Покупка долгов</a></li>
+            </ul>
             <div class="footerAddrDiv">
                 <div class="contactsIconDiv"> <img src="~/images/location.png" /></div>
                 <div class="footerAddrDivText">г. Владимир, ул. Мира, дом 22</div>
             </div>
         </div>
-        <div class="contactsDiv">
+        <div class="contactsDiv footerContactsDiv">
 
             <div class="contactsDivScnd">
                 <div class="contactsIconDiv"> <img src="~/images/email1.png" /></div>

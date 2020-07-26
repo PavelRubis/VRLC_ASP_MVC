@@ -1,0 +1,25 @@
+﻿@model WebSiteASP.Models.Video
+@{
+    ViewBag.Title = Model.Name;
+}
+
+    <div class="linkDiv">
+        <a href="@Url.Action("Index", "Home")">Главная ></a>
+        <a href="@Url.Action("Videos", "Home")"> Видео ></a>
+        <a href="#"> @Model.Name</a>
+    </div>
+
+<div class="thsVideoDiv">
+    <div class="videoHeaderDiv">
+        <h2>@Model.Name</h2>
+        <p>@Model.UploadDate.ToString()</p>
+    </div>
+    <div class="playerDiv">
+        <iframe width="960" height="540" ; src="@Model.Url" frameborder="0"
+                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"></iframe>
+    </div>
+    <div class="ya-share2" data-services="vkontakte,facebook,odnoklassniki,viber,whatsapp,telegram" data-url="@Model.Url"></div>
+</div>
+
+<script src="https://yastatic.net/es5-shims/0.0.2/es5-shims.min.js"></script>
+<script src="https://yastatic.net/share2/share.js"></script>

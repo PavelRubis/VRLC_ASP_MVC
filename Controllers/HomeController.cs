@@ -72,5 +72,15 @@ namespace WebSiteASP.Controllers
         {
             return View();
         }
+        public ActionResult Videos()
+        {
+            return View();
+        }
+        public ActionResult Video(int id)
+        {
+            IEnumerable<Video> videos = db.Videos;
+
+            return View(videos.Where(vd => vd.Id == id).Last());
+        }
     }
 }
