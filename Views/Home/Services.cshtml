@@ -103,22 +103,8 @@
     <div class="searchDiv">
 
         <div class="allFormDiv">
-            <div class="searchFormDivText">
-                Контактная информация:
-            </div>
             @using (Html.BeginForm("PropertySearch", "Home", FormMethod.Post, new { enctype = "application/x-www-form-urlencoded" }))
             {
-                <div class="searchFormContactDiv">
-                    <input name="Name" onblur="if(this.value=='' ) this.value='Ваше имя' "
-                           onfocus="if(this.value=='Ваше имя' ) this.value='' " value='Ваше имя' />
-                    <input type="tel" onblur="if(this.value=='' ) this.value='Телефон' "
-                           onfocus="if(this.value=='Телефон' ) this.value='' " value='Телефон' pattern="\+7[0-9]{10}"
-                           placeholder="+7XXXXXXXXXX" id="phone " name="Phone" />
-                    <input type="email" onblur="if(this.value=='' ) this.value='Email' "
-                           onfocus="if(this.value=='Email' ) this.value='' " value='Email'
-                           pattern="@ViewBag.EmailPattern" placeholder="example@mail.ru"
-                           id="email" name="Email" />
-                </div>
                 <div class="searchDivDebtorText">
                     Данные о должнике:
                 </div>
@@ -141,28 +127,35 @@
 
                     <textarea onblur="if(this.value=='' ) this.value='Иная имеющаяся информация'"
                               onfocus="if(this.value=='Иная имеющаяся информация' ) this.value='' "
-                              value='Иная имеющаяся информация' id="DebtorExtraInf" name="DebtorExtraInf"></textarea>
+                              id="DebtorExtraInf" name="DebtorExtraInf">Иная имеющаяся информация</textarea>
 
+                </div>
+
+                <div class="searchFormDivText">
+                    Контактная информация:
+                </div>
+
+                <div class="searchFormContactDiv">
+                    <input name="Name" onblur="if(this.value=='' ) this.value='Ваше имя' "
+                           onfocus="if(this.value=='Ваше имя' ) this.value='' " value='Ваше имя' />
+                    <input type="tel" onblur="if(this.value=='' ) this.value='Телефон' "
+                           onfocus="if(this.value=='Телефон' ) this.value='' " value='Телефон' pattern="\+7[0-9]{10}"
+                           placeholder="+7XXXXXXXXXX" id="phone " name="Phone" />
+                    <input type="email" onblur="if(this.value=='' ) this.value='Email' "
+                           onfocus="if(this.value=='Email' ) this.value='' " value='Email'
+                           pattern="@ViewBag.EmailPattern" placeholder="example@mail.ru"
+                           id="email" name="Email" />
                 </div>
 
                 <div class="searchFormDivText">
                     Оформление:
                 </div>
-
-                <div class="submitDiv">
-                    <label class="checkbox-other">
-                        <input type="checkbox" checked name="contractCheckbox" id="ContractCheckbox"
-                               onchange="ContractBlock('ContractCheckbox')"> С <a href="#"> договором</a> оказания
-                        услуги
-                        ознакомлен
-                    </label>
-                    <button type="submit" id="submitButton"
-                            onmouseover="var img = document.getElementById('cartImg'); img.src = '../images/darkCart.png';"
-                            onmouseout="var img = document.getElementById('cartImg'); img.src = '../images/blueCart.png';">
-                        <img id="cartImg" src="~/images/blueCart.png" />
-                        <div>Купить услугу - 500₽</div>
-                    </button>
-                </div>
+                <button type="submit" id="submitButton"
+                        onmouseover="var img = document.getElementById('cartImg'); img.src = '../images/darkCart.png';"
+                        onmouseout="var img = document.getElementById('cartImg'); img.src = '../images/blueCart.png';">
+                    <img id="cartImg" src="~/images/blueCart.png" />
+                    <div>Купить услугу - 500₽</div>
+                </button>
             }
 
         </div>
